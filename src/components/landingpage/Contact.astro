@@ -1,0 +1,30 @@
+<div class="contacts grow">
+    <a href="">
+        <img src="/instagram-svgrepo-com.svg" alt="" class="contact">
+    </a>
+    <a href="">
+        <img src="/call-receive-svgrepo-com.svg" alt="" class="contact">
+    </a>
+</div>
+
+<style>
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        filter: invert(73%) sepia(68%) saturate(725%) hue-rotate(8deg) brightness(108%) contrast(93%);
+    }
+
+    .grow img:hover {
+        filter: drop-shadow( 0px 0px 3px rgba(235, 220, 9)) blur(0px) invert(73%) sepia(68%) saturate(725%) hue-rotate(8deg) brightness(108%) contrast(93%);
+        transform: scale(1.05);
+        transition: all .3s ease-in-out;
+    }
+
+</style>

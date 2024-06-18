@@ -1,0 +1,50 @@
+<div class="navmenu">
+        <ul class="container">
+            <li class="grow"><a href="">About Us</a></li>
+            <li class="grow"><a href="">Plans</a></li>
+            <li class="grow"><a href="/">SHIBUMI</a></li>
+            <li class="grow"><a href="/portfolio/">Portfolio</a></li>
+            <li class="grow"><a href="/contacts/">Contacts</a></li>
+        </ul>  
+</div>
+
+<style>
+
+    a, li {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+
+    a:hover {
+     color: rgb(235, 220, 9);
+    }
+
+    .grow {
+        transition: all .3s ease-in-out;
+    }
+
+    .grow:hover {
+        text-shadow: 0 0 2px;
+        transform: scale(1.1);
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .navmenu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding-right: 40px;
+    }
+
+</style>
