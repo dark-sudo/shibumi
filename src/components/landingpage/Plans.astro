@@ -1,17 +1,15 @@
 <div class="plans">
-    <div class="title">
-        <h1>I WANT</h1>
-    </div>
+    <h1>I WANT</h1>
     <div class="cards">
-        <div class="card box">
+        <div class="card">
             <h2>E-Commerce Website</h2>
             <img src="/public/Plans/cart 1.svg" alt="">
         </div>
-        <div class="card box">
+        <div class="card">
             <h2>Showcase Website</h2>
             <img src="/public/Plans/artist 1.svg" alt="">
         </div>
-        <div class="card box">
+        <div class="card">
             <h2>Custom Website</h2>
             <img src="/public/Plans/custum 1.svg" alt="">
         </div>
@@ -23,10 +21,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        justify-content: space-between;
+        width: 90%;
         border: 1px solid red;
-        justify-content: end;
-        height: 100vh;
+        align-self: flex-start;
+        height: 90%;
+        gap: -80px;
 
     }
 
@@ -37,7 +37,14 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         border: 1px solid blue;
-        margin-top: -20px;
+        margin:0px;
+    }
+
+    h2 {
+        font-family: 'Fjalla One';
+        font-size: 33px;
+        line-height: 41%;
+        padding-top: 30px;
     }
 
     .cards {
@@ -45,7 +52,8 @@
         flex-direction: row;
         justify-content: space-around;
         width: 85%;
-        border: 1px solid green
+        height: 50%;
+        border: 1px solid green;
     }
 
     .card {
@@ -53,11 +61,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        border-radius: 40px;
+        width:25%;
+        height: 100%;
+        border-radius: 34px;
         backdrop-filter: blur(50px);
         background-image: -moz-linear-gradient(135deg, rgb(179, 231, 255), rgb(255, 253, 194));
         background-image: -webkit-linear-gradient(135deg, rgb(179, 231, 255), rgb(255, 253, 194));
         background-image: linear-gradient(135deg, rgb(179, 231, 255), rgb(255, 253, 194));
+    }
+
+    img {
+        height: 310px;
     }
 
 
