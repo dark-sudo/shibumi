@@ -1,19 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MainDescription from "../components/landingpage/MainDescription.astro";
+import Works from "../components/landingpage/Works.astro";
+import Plans from "../components/landingpage/Plans.astro";
+import Contact from "../components/landingpage/Contact.astro";
 ---
 
-<Layout title="Shibumi">
+<Layout title="Shibumi" >
     <main>
         <MainDescription />
+        <Works />
+        <Plans />
+        <Contact />
     </main>
 </Layout>
 
 <style>
     main {
-        height: 90vh;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
     }
+    
+        
 </style>
+
