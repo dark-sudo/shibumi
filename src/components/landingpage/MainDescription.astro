@@ -2,7 +2,7 @@
     <h1 class="typewriter">
       <div style="display: flex; flex-direction: row; gap:50px;">
         <div data-aos="fade-right">
-          WE 
+          We
         </div>
         <div data-aos="fade-right"><span class=""></span></div>
       </div>
@@ -15,8 +15,6 @@
         color: white;
         font-size: 200px;
         font-family: 'Fjalla One', sans-serif;
-        font-weight: bold;
-        font-style: normal;
 
     }
     span {
@@ -73,20 +71,43 @@ document.addEventListener('DOMContentLoaded',function(event){
       setTimeout(fnCallback, 900);
     }
   }
+  // New function for deleting text
+  function deleteWriter(text: string, i: number, fnCallback: CallableFunction) {
+    // check if text isn't finished yet
+    if (i >= 0) {
+      // remove the next character from h1
+      //@ts-ignore
+      document.querySelector("span").innerHTML = text.substring(0, i) + '<span aria-hidden="true">|</span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function() {
+        deleteWriter(text, i - 1, fnCallback)
+      }, 200);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      // call callback after timeout
+      setTimeout(fnCallback, 900);
+    }
+  }
+
   // start a typewriter animation for a text in the dataText array
-   function StartTextAnimation(i:number) {
-     if (typeof dataText[i] == 'undefined'){
-        setTimeout(function() {
-          StartTextAnimation(0);
-        }, 800);
-     }
-     // check if dataText[i] exists
-    if (i < dataText[i].length) {
+  function StartTextAnimation(i: number) {
+    if (typeof dataText[i] == 'undefined') {
+      setTimeout(function() {
+        StartTextAnimation(0);
+      }, 800);
+    }
+    // check if dataText[i] exists
+    if (i < dataText.length) {
       // text exists! start typewriter animation
-     typeWriter(dataText[i], 0, function(){
-       // after callback (and whole text has been animated), start next text
-       StartTextAnimation(i + 1);
-     });
+      typeWriter(dataText[i], 0, function() {
+        // after callback (and whole text has been animated), start deleting text
+        deleteWriter(dataText[i], dataText[i].length, function() {
+          // after callback (and whole text has been deleted), start next text
+          StartTextAnimation(i + 1);
+        });
+      });
     }
   }
   // start the text animation
