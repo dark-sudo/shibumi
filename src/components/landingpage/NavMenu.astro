@@ -1,4 +1,4 @@
-<div class="navmenu">
+<nav class="navmenu" id="navbar">
         <ul class="container">
             <li class="grow"><a href="#portfolio">About Us</a></li>
             <li class="grow"><a href="#plans">Plans</a></li>
@@ -6,7 +6,7 @@
             <li class="grow"><a href="#portfolio">Portfolio</a></li>
             <li class="grow"><a href="#contact">Contact Us</a></li>
         </ul>  
-</div>
+</nav>
 
 <style>
 
@@ -40,7 +40,20 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        width: 100%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: transparent;
+        padding: 10px 0; 
+        transition: background-color 0.3s ease;
     }
+
+    .navmenu.scrolled {
+        background-color: rgb(23,27,33, 0.9);
+    }
+
 
     .container {
         display: flex;
@@ -51,3 +64,16 @@
     }
 
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  });
+</script>

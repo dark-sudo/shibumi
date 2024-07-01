@@ -4,13 +4,14 @@ import MainDescription from "../components/landingpage/MainDescription.astro";
 import Works from "../components/landingpage/Works.astro";
 import Plans from "../components/landingpage/Plans.astro";
 import Contact from "../components/landingpage/Contact.astro";
-
+import NavMenu from "../components/landingpage/NavMenu.astro";
 
 import "aos/dist/aos.css";
 ---
 
 <Layout title="Shibumi" >
     <main>
+        <NavMenu />
         <MainDescription />
         <Works />
         <Plans />
