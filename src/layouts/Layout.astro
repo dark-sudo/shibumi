@@ -6,6 +6,10 @@ export interface Props {
 const { title } = Astro.props;
 
 import NavMenu from '../components/landingpage/NavMenu.astro';
+
+import { ViewTransitions } from 'astro:transitions';
+
+import "aos/dist/aos.css"
 ---
 
 <html lang="en">
@@ -29,15 +33,24 @@ import NavMenu from '../components/landingpage/NavMenu.astro';
 
     html {
         height: 100%;
+        scroll-behavior: smooth;
     }
 
     body {
         background-color: #171B21;
         margin: 0;
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
 </style>
+
+<script>
+    import { aosInit } from "../scripts/aos";
+
+    aosInit();
+
+</script>
 

@@ -4,6 +4,9 @@ import MainDescription from "../components/landingpage/MainDescription.astro";
 import Works from "../components/landingpage/Works.astro";
 import Plans from "../components/landingpage/Plans.astro";
 import Contact from "../components/landingpage/Contact.astro";
+
+
+import "aos/dist/aos.css";
 ---
 
 <Layout title="Shibumi" >
@@ -22,8 +25,12 @@ import Contact from "../components/landingpage/Contact.astro";
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        gap: 50px;
+    }
+
+    .hidden {
+        display: none;
     }
     
         
 </style>
-
