@@ -70,8 +70,10 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', function () {
       if (window.scrollY > 0) {
+    //@ts-ignore
         navbar.classList.add('scrolled');
       } else {
+    //@ts-ignore
         navbar.classList.remove('scrolled');
       }
     });
