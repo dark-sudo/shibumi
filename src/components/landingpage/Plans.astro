@@ -5,25 +5,31 @@
     <h1 data-aos="fade-down">I WANT</h1>
     <div class="cards">
         <div class="inner">
-            <div class="card" data-aos="fade-right">
-                <h2>E-Commerce Website</h2>
-                <img src="/Plans/cart 1.svg" alt="" class="front">
-                <img src="Behind cards.svg" alt="" class="back">
-            </div>
+            <a href="https://google.com" target="_blank">
+                <div class="card" data-aos="fade-right">
+                    <h2>E-Commerce Website</h2>
+                    <img src="/Plans/cart 1.svg" alt="" class="front">
+                    <img src="Behind cards.svg" alt="" class="back">
+                </div>
+            </a>
         </div>
         <div class="inner">
-            <div class="card" data-aos="fade-down">
-                <h2>E-Commerce Website</h2>
-                <img src="/Plans/artist 1.svg" alt="" class="front">
-                <img src="Behind cards.svg" alt="" class="back">
-            </div>
+            <a href="" target="_blank">
+                <div class="card" data-aos="fade-down">
+                    <h2>E-Commerce Website</h2>
+                    <img src="/Plans/artist 1.svg" alt="" class="front">
+                    <img src="Behind cards.svg" alt="" class="back">
+                </div>
+            </a>
         </div>
         <div class="inner">
-            <div class="card" data-aos="fade-left">
-                <h2>E-Commerce Website</h2>
-                <img src="/Plans/custum 1.svg" alt="" class="front">
-                <img src="Behind cards.svg" alt="" class="back">
-            </div>
+            <a href="" target="_blank" >
+                <div class="card" data-aos="fade-left">
+                    <h2>E-Commerce Website</h2>
+                    <img src="/Plans/custum 1.svg" alt="" class="front">
+                    <img src="Behind cards.svg" alt="" class="back">
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -66,7 +72,7 @@
     .inner {
         position: relative;
         width: 22%;
-        height: 90%;
+        height: 92%;
         overflow: visible;
     }
 
@@ -97,12 +103,29 @@
         background-image: linear-gradient(135deg, rgb(179, 231, 255), rgb(255, 253, 194));*/
     }
 
+    .card:hover {
+        background-color: rgb(255, 255, 255, 0.8);
+        box-shadow: 0px 0px 2.2px 0px rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 15.37px 0px rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 30.73px 0px rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 52.68px 0px rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 92.2px 0px rgba(255, 255, 255, 1);
+        transition: 0.3s;
+    }
+
+    .card:hover .back {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+
     img {
         height: 310px;
     }
 
     .front {
     }
+
 
     .back {
         position: absolute;
@@ -113,6 +136,7 @@
         left: -70px;
         max-width: 300%;
         border-radius: 34px;
+        transition: opacity 0.3s;
         mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent),
                   linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
       mask-composite: intersect; /* Combiner les masques */
