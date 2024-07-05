@@ -9,8 +9,137 @@ import NavMenu from "../components/landingpage/NavMenu.astro";
 import "aos/dist/aos.css";
 ---
 
+<Layout title="Shibumi">
+    <div class="overlay">
+        <h1 class="shibumi-text">SHIBUMI</h1>
+    </div>
+    <main class="hidden">
+        <NavMenu />
+        <MainDescription />
+        <Plans />
+        <Works />
+        <Contact />
+    </main>
+</Layout>
+
+<style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: -32px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #171B21;
+        z-index: 1000;
+    }
+
+    .shibumi-text {
+        font-family: 'Lora', sans-serif;
+        font-size: 72px;
+        color: white;
+        animation: fadeInDown 1s forwards, pauseMid 1s 1s forwards, moveUpAndShrink 2s 2s forwards, shine 2s infinite;
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pauseMid {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes moveUpAndShrink {
+        0% {
+            transform: translateY(0) scale(1);
+        }
+        100% {
+            transform: translateY(calc(-50vh + 22px)) scale(0.36);
+        }
+    }
+
+    @keyframes shine {
+        0%, 100% {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        50% {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .show {
+        display: flex;
+    }
+
+    main {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 80px;
+    }
+</style>
+
+<script>
+
+    import AOS from "aos";
+    import 'aos/dist/aos.css';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.querySelector('.overlay');
+        const main = document.querySelector('main');
+        const shibumiText = document.querySelector('.shibumi-text');
+        AOS.refresh();
+
+        //@ts-ignore
+        shibumiText.addEventListener('animationend', (e) => {
+            if (e.animationName === 'moveUpAndShrink') {
+                overlay.style.display = 'none';
+                main.classList.remove('hidden');
+                main.classList.add('show');
+            }
+            AOS.refresh();
+        });
+    });
+</script>
+
+
+
+<!--
+---
+import Layout from "../layouts/Layout.astro";
+import MainDescription from "../components/landingpage/MainDescription.astro";
+import Works from "../components/landingpage/Works.astro";
+import Plans from "../components/landingpage/Plans.astro";
+import Contact from "../components/landingpage/Contact.astro";
+import NavMenu from "../components/landingpage/NavMenu.astro";
+
+import "aos/dist/aos.css";
+---
+
 <Layout title="Shibumi" >
-    <main>
+    <main class="hidden">
         <NavMenu />
         <MainDescription />
         <Plans />
@@ -35,3 +164,5 @@ import "aos/dist/aos.css";
     
         
 </style>
+
+ -->
