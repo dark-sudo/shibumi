@@ -230,17 +230,3 @@ a:hover {
 }
 
 </style>
-
-<script setup>
-    import { onMounted } from 'astro';
-    import AOS from 'aos';
-    import 'aos/dist/aos.css';
-
-    onMounted(() => {
-        // Attendre 5 secondes avant d'initialiser AOS
-        setTimeout(() => {
-            AOS.init();
-            AOS.refresh(); // Assurez-vous d'appeler AOS.refresh() si nécessaire
-        }, 5000); // Temps en millisecondes (5 secondes = 5000 ms)
-    });
-</script>

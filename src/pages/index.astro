@@ -103,6 +103,7 @@ import "aos/dist/aos.css";
 
 <script>
 
+    //@ts-ignore
     import AOS from "aos";
     import 'aos/dist/aos.css';
 
@@ -114,9 +115,13 @@ import "aos/dist/aos.css";
 
         //@ts-ignore
         shibumiText.addEventListener('animationend', (e) => {
+            //@ts-ignore
             if (e.animationName === 'moveUpAndShrink') {
+                //@ts-ignore
                 overlay.style.display = 'none';
+                //@ts-ignore
                 main.classList.remove('hidden');
+                //@ts-ignore
                 main.classList.add('show');
             }
             AOS.refresh();
