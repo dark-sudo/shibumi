@@ -3,7 +3,7 @@ import "aos/dist/aos.css";
 ---
 <div class="description">
     <h1 class="typewriter">
-      <div class="animation" style="display: flex; flex-direction: row; gap:50px;">
+      <div class="animation">
         <div data-aos="fade-right">
           We
         </div>
@@ -18,25 +18,31 @@ import "aos/dist/aos.css";
   
     h1 {
         color: white;
-        font-size: 200px;
+        font-size: 180px;
         font-family: 'Fjalla One', sans-serif;
         font-weight: bold;
 
     }
-    span {
+   span {
         color: rgba(0, 25, 250, 1);
+    }
+
+    .typewriter {
+      display: flex
     }
 
     .animation {
       width: 80%;
+      display:flex;
+      flex-direction: row; 
+      align-items: center;
+      gap:50px;
       justify-content: center;
     }
 
     .description {
         display:flex;
-        align-items: center;
         flex-direction: row;
-        justify-content: center;
         height: 100vh;
         width: 70%;
         margin-top: -110px;
@@ -53,6 +59,35 @@ import "aos/dist/aos.css";
       justify-content: center;
     }
 
+    @media (max-width: 1000px) {
+      h1 {
+        font-size: 100px;
+      }
+    }
+    
+    @media only screen and (max-width: 500px) {
+      h1 {
+        font-size: 70px;
+        display:flex;
+        flex-direction: column;
+        gap:1px;
+      }
+
+      .animation {
+        width: 100%;
+        display: flex; 
+        flex-direction: column; 
+        gap:2px;
+      } 
+
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 50px;
+
+      }
+    }
 </style>
 
 
@@ -125,4 +160,5 @@ document.addEventListener('DOMContentLoaded',function(event){
   StartTextAnimation(0);
 });
 
+</script>
 </script>

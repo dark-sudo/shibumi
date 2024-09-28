@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
         <ul class="container">
             <li class="grow" data-aos="fade-right"><a href="#portfolio">About Us</a></li>
             <li class="grow" data-aos="fade-right"><a href="#plans">Plans</a></li>
-            <li class="grow"><a href="/">SHIBUMI</a></li>
+            <li class="grow" data-aos="fade-down"><a href="/">SHIBUMI</a></li>
             <li class="grow" data-aos="fade-right"><a href="#portfolio">Portfolio</a></li>
             <li class="grow" data-aos="fade-right"><a href="#contact">Contact Us</a></li>
         </ul>  
@@ -17,9 +17,15 @@ import "aos/dist/aos.css";
     a, li {
         text-decoration: none;
         color: white;
-        font-size: 25px;;
+        font-size: 25px;
         font-family: 'Lora', serif;
         line-height: 35px;
+    }
+
+    @media (max-width: 1100px) {
+        a {
+            font-size: 23px;
+        }
     }
 
     a:hover {
@@ -28,6 +34,9 @@ import "aos/dist/aos.css";
 
     .grow {
         transition: all .3s ease-in-out;
+        flex-grow: 1;
+        text-align: center;
+        width: 80%;
     }
 
     .grow:hover {
@@ -45,7 +54,6 @@ import "aos/dist/aos.css";
         flex-direction: row;
         align-items: center;
         width: 100%;
-        position: -webkit-sticky;
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -58,11 +66,16 @@ import "aos/dist/aos.css";
         background-color: rgb(23,27,33, 0.9);
     }
 
+    .navmenu .grow:nth-child(3) {
+    flex-grow: 2; 
+}
+
 
     .container {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        align-items: center;
         width: 100%;
     }
 

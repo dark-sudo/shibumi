@@ -18,7 +18,7 @@ import "aos/dist/aos.css";
         <MainDescription />
         <Plans />
         <Works />
-        <Contact />
+        <Contact/>
     </main>
 </Layout>
 
@@ -26,7 +26,6 @@ import "aos/dist/aos.css";
     .overlay {
         position: fixed;
         top: 0;
-        left: -32px;
         width: 100%;
         height: 100%;
         display: flex;
@@ -34,13 +33,16 @@ import "aos/dist/aos.css";
         justify-content: center;
         background-color: #171B21;
         z-index: 1000;
+        text-align: center;
     }
 
     .shibumi-text {
         font-family: 'Lora', sans-serif;
+        align-items: center;
         font-size: 72px;
         color: white;
         animation: fadeInDown 1s forwards, pauseMid 1s 1s forwards, moveUpAndShrink 2s 2s forwards, shine 2s infinite;
+        transform-origin: center center;
     }
 
     @keyframes fadeInDown {
@@ -89,10 +91,12 @@ import "aos/dist/aos.css";
 
     .show {
         display: flex;
+        width: 100%;
     }
 
     main {
         height: 100%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
